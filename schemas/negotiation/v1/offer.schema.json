@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-bazaar:negotiation:v1:offer",
+  "title": "OfferAct",
+  "type": "object",
+  "required": [
+    "schema",
+    "actId",
+    "sessionId",
+    "round",
+    "sequence",
+    "timestamp",
+    "expiresAt",
+    "payload"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "enum": [
+        "urn:agent-bazaar:negotiation:v1:offer",
+        "urn:agent-bazaar:negotiation:v1:counteroffer"
+      ]
+    },
+    "actId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "sessionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inReplyTo": {
+      "type": ["string", "null"],
+      "format": "uuid"
+    },
+    "round": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "payload": {
+      "type": "object",
+      "required": ["terms"],
+      "properties": {
+        "terms": {
+          "$ref": "goods-terms.schema.json"
+        }
+      }
+    }
+  }
+}

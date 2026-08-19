@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-bazaar:negotiation:v1:goods-terms",
+  "title": "GoodsTerms",
+  "type": "object",
+  "required": [
+    "dealType",
+    "sku",
+    "quantity",
+    "unitPriceCents",
+    "currency"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "dealType": {
+      "const": "goods"
+    },
+    "sku": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "unitPriceCents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "warrantyMonths": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "shippingDays": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "returnsDays": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
