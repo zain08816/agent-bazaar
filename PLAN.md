@@ -22,17 +22,16 @@ No real money, no legal binding, no DIDs in v1.
 
 ## Architecture
 
+See **[docs/architecture.md](./docs/architecture.md)** for full diagrams (protocol stack, sequences, state machine, deployment).
+
+High-level:
+
 ```
-Human
-  │
-  ▼
-Buyer Agent ──A2A──► Directory (Agent Cards + catalog)
-  │
-  ├──A2A + Bazaar extension──► Merchant Agent A
-  ├──A2A + Bazaar extension──► Merchant Agent B
-  └──A2A + Bazaar extension──► Merchant Agent C
-                                    │
-                                    └── MCP ──► inventory / pricing rules
+Human → Buyer Agent → Directory (discover merchants)
+              ├── A2A + Bazaar extension → Merchant A
+              ├── A2A + Bazaar extension → Merchant B
+              └── A2A + Bazaar extension → Merchant C
+                                              └── MCP → inventory / pricing
 ```
 
 ### Layers

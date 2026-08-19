@@ -25,8 +25,9 @@ A marketplace where buyer agents discover merchant agents and **negotiate price 
 ## Docs
 
 - [Project plan](./PLAN.md)
-- [Architecture](./docs/architecture.md)
+- [Architecture & diagrams](./docs/architecture.md)
 - [Negotiation protocol v1](./docs/protocol.md)
+- [Contributing](./CONTRIBUTING.md)
 
 ## Quick start
 
